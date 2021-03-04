@@ -7,14 +7,15 @@ import CollectionPreView from '../../components/collection-preview/collection-pr
 import './collections-overview.styles.scss'
 
 const CollectionsOverview = ({collections}) => 
-(<div className='collections-overview'>
+{   
+    return (<div className='collections-overview'>
     {
         collections.map(({id, ...otherProps}) => (
             <CollectionPreView key={id} {...otherProps}/>
         ))
     }
 </div>
-);
+)};
 
 const mapStateToProps = createStructuredSelector({
   collections: selectCollectionsForPreview
